@@ -8,16 +8,20 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (req,res)=>{
-    res.render('index')
+    res.render('index');
 })
 
 app.get('/about', (req,res)=>{
-    res.render('about')
+    res.render('about');
 })
 
-app.get('/about-us', (req,res)=>{
-    res.redirect('/about')
+app.get('/blog/create', (req,res)=>{
+    res.render('create');
 })
+
+// app.get('/about-us', (req,res)=>{
+//     res.redirect('/about')
+// })
 
 // 404 Page
 app.use((req,res)=>{
