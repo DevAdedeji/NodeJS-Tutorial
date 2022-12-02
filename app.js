@@ -2,13 +2,17 @@ const express = require('express');
 
 const app = express();
 
+// Register view engines
+app.set('view engine', 'ejs');
+
+
 
 app.get('/', (req,res)=>{
-    res.sendFile('./views/index.html', {root:__dirname})
+    res.render('index')
 })
 
 app.get('/about', (req,res)=>{
-    res.sendFile('./views/about.html', {root:__dirname})
+    res.render('about')
 })
 
 app.get('/about-us', (req,res)=>{
@@ -17,7 +21,7 @@ app.get('/about-us', (req,res)=>{
 
 // 404 Page
 app.use((req,res)=>{
-    res.sendFile('./views/404.html', {root:__dirname});
+    res.render('404');
 })
 
 // Listen for request
