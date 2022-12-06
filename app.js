@@ -1,7 +1,12 @@
 const express = require('express');
 const morgan = require("morgan");
 
+
+
 const app = express();
+
+// Connect to MongoDB
+const dbURL = 'mongodb+srv://devadedeji:adedejimayowa9233@blogs.mqsv8.mongodb.net/?retryWrites=true&w=majority'
 
 // Register view engines
 app.set('view engine', 'ejs');
