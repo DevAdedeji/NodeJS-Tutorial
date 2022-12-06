@@ -8,15 +8,20 @@ app.set('view engine', 'ejs');
 
 
 app.get('/', (req,res)=>{
-    res.render('index');
+    const blogs = [
+        {title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+        {title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+        {title: 'How to defeat bowser', snippet: 'Lorem ipsum dolor sit amet consectetur'},
+      ];
+    res.render('index', {title: 'Home', blogs});
 })
 
 app.get('/about', (req,res)=>{
-    res.render('about');
+    res.render('about', {title: 'About'});
 })
 
 app.get('/blog/create', (req,res)=>{
-    res.render('create');
+    res.render('create', {title: 'Create a new blog'});
 })
 
 // app.get('/about-us', (req,res)=>{
@@ -25,7 +30,7 @@ app.get('/blog/create', (req,res)=>{
 
 // 404 Page
 app.use((req,res)=>{
-    res.render('404');
+    res.render('404', {title: '404 page'});
 })
 
 // Listen for request
