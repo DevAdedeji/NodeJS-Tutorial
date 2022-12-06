@@ -1,9 +1,18 @@
 const express = require('express');
+const morgan = require("morgan");
 
 const app = express();
 
 // Register view engines
 app.set('view engine', 'ejs');
+
+// Listen for request
+app.listen(3000);
+
+app.use(morgan('dev'));
+
+// Middleware and static files
+app.use(express.static('public'))
 
 
 
@@ -33,5 +42,3 @@ app.use((req,res)=>{
     res.render('404', {title: '404 page'});
 })
 
-// Listen for request
-app.listen(3000);
