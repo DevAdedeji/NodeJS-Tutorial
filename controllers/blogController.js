@@ -18,7 +18,7 @@ const blog_details = (req,res)=>{
         res.render('blog', {blog:result, title:result.title})
     })
     .catch(err=>{
-        console.log(err)
+        res.render('404', {title: '404 page'});
     })
 }
 
