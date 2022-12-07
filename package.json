@@ -21,6 +21,7 @@
   "homepage": "https://github.com/DevAdedeji/NodeJS-Tutorial#readme",
   "dependencies": {
     "ejs": "^3.1.8",
+    "mongoose": "^6.8.0",
     "morgan": "^1.10.0"
   }
 }
